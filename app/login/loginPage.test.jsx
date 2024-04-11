@@ -9,7 +9,7 @@ describe("Hello world", () => {
   });
 
   test("renders hello text", () => {
-    const helloElement = screen.getByText(/heo/i);
+    const helloElement = screen.getByText(/hello/i);
     expect(helloElement).toBeInTheDocument();
   });
 });

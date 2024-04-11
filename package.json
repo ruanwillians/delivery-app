@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "vitest --bail 1",
+    "test": "vitest run",
     "cypress:open": "cypress open",
     "prepare": "husky"
   },
