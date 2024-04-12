@@ -5,14 +5,15 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 COPY package.json* ./
+RUN npm install
 RUN if [ -f package-lock.json ]; then npm ci; fi
 
 FROM deps AS builder
 WORKDIR /app
 COPY . .
 
-RUN if [ -f package-lock.json ]; then npm run build; fi
-
+RUN apk add --no-cache bash   
+RUN if [ -f package-lock.json ]; then npm run build; fi 
 FROM base AS runner
 WORKDIR /app
 
